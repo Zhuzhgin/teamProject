@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		CACFE02E2783516C00D80D3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFE02D2783516C00D80D3D /* AppDelegate.swift */; };
 		CACFE0302783516C00D80D3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFE02F2783516C00D80D3D /* SceneDelegate.swift */; };
-		CACFE0322783516C00D80D3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFE0312783516C00D80D3D /* ViewController.swift */; };
+		CACFE0322783516C00D80D3D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFE0312783516C00D80D3D /* StartViewController.swift */; };
 		CACFE0352783516C00D80D3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACFE0332783516C00D80D3D /* Main.storyboard */; };
 		CACFE0372783517A00D80D3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACFE0362783517A00D80D3D /* Assets.xcassets */; };
 		CACFE03A2783517A00D80D3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACFE0382783517A00D80D3D /* LaunchScreen.storyboard */; };
+		CACFE0432783644A00D80D3D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFE0422783644A00D80D3D /* DataManager.swift */; };
+		CACFE0462783671300D80D3D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFE0452783671300D80D3D /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CACFE02A2783516C00D80D3D /* teamProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teamProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACFE02D2783516C00D80D3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CACFE02F2783516C00D80D3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CACFE0312783516C00D80D3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CACFE0312783516C00D80D3D /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		CACFE0342783516C00D80D3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CACFE0362783517A00D80D3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CACFE0392783517A00D80D3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CACFE03B2783517A00D80D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CACFE0422783644A00D80D3D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CACFE0452783671300D80D3D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				CACFE02D2783516C00D80D3D /* AppDelegate.swift */,
 				CACFE02F2783516C00D80D3D /* SceneDelegate.swift */,
-				CACFE0312783516C00D80D3D /* ViewController.swift */,
+				CACFE0312783516C00D80D3D /* StartViewController.swift */,
+				CACFE0422783644A00D80D3D /* DataManager.swift */,
+				CACFE0452783671300D80D3D /* Model.swift */,
 				CACFE0332783516C00D80D3D /* Main.storyboard */,
 				CACFE0362783517A00D80D3D /* Assets.xcassets */,
 				CACFE0382783517A00D80D3D /* LaunchScreen.storyboard */,
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CACFE0322783516C00D80D3D /* ViewController.swift in Sources */,
+				CACFE0462783671300D80D3D /* Model.swift in Sources */,
+				CACFE0322783516C00D80D3D /* StartViewController.swift in Sources */,
+				CACFE0432783644A00D80D3D /* DataManager.swift in Sources */,
 				CACFE02E2783516C00D80D3D /* AppDelegate.swift in Sources */,
 				CACFE0302783516C00D80D3D /* SceneDelegate.swift in Sources */,
 			);
