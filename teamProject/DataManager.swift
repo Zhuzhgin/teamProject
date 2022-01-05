@@ -11,8 +11,8 @@ class DataManager {
     
     static var shared = DataManager()
     
-    var cityNames: [String] = ["Москва","Санкт-Петербург","Тюмень","Уфа","Новосибирск"]
-    var userNames = ["Дмитрий Онегин","Дмитрий","Владислав","Динар","Артем"]
+    var cityNames: [String] = ["Санкт-Петербург","Москва","Тюмень","Уфа","Новосибирск"]
+    var userNames = ["Дмитрий Онегин","Владислав","Артем","Динар","Дмитрий"]
     private init() {}
 
 }

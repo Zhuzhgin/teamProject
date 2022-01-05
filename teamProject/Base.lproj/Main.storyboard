@@ -17,12 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FYl-ez-0Sl">
-                                <rect key="frame" x="30" y="69" width="315" height="356.5"/>
+                                <rect key="frame" x="30" y="69" width="315" height="568"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Название города или имя пользователя" id="a2S-7v-AJC">
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Название города или имя " id="a2S-7v-AJC">
                                     <rect key="frame" x="0.0" y="0.0" width="315" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="2bM-e4-oIc">
@@ -42,12 +42,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="exG-mk-ZuO"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltc-1S-YMX">
-                                <rect key="frame" x="30" y="575.5" width="315" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Города пользователей" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8N-8e-wP6">
                                 <rect key="frame" x="64.5" y="30" width="246" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -61,17 +55,13 @@
                             <constraint firstItem="b8N-8e-wP6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="7CA-aE-7Lc"/>
                             <constraint firstItem="b8N-8e-wP6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HW7-pS-aMi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FYl-ez-0Sl" secondAttribute="trailing" constant="30" id="RfF-Au-fdr"/>
-                            <constraint firstItem="Ltc-1S-YMX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="WCp-gl-GVr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ltc-1S-YMX" secondAttribute="trailing" constant="30" id="e3f-bT-iHq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ltc-1S-YMX" secondAttribute="bottom" constant="70" id="goc-Vr-jTC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FYl-ez-0Sl" secondAttribute="bottom" constant="30" id="kXu-aa-7d4"/>
                             <constraint firstItem="FYl-ez-0Sl" firstAttribute="top" secondItem="b8N-8e-wP6" secondAttribute="bottom" constant="10" id="kcP-Ra-iTZ"/>
-                            <constraint firstItem="Ltc-1S-YMX" firstAttribute="top" secondItem="FYl-ez-0Sl" secondAttribute="bottom" constant="150" id="nfy-ik-xAL"/>
                             <constraint firstItem="FYl-ez-0Sl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="znt-Jk-gwR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="a2S-7v-AJC" id="1Ik-Io-slq"/>
-                        <outlet property="searchTextLabel" destination="Ltc-1S-YMX" id="tQ7-4E-iiL"/>
                         <outlet property="tableViewOutlet" destination="FYl-ez-0Sl" id="nDH-3c-6j5"/>
                     </connections>
                 </viewController>
@@ -87,23 +77,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4c-qj-qBW">
-                                <rect key="frame" x="60" y="99" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Пользователь" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR7-6u-R2D">
-                                <rect key="frame" x="60" y="204" width="219" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="D86-z9-gaB">
+                                <rect key="frame" x="95.5" y="218.5" width="184.5" height="210"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Город" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4c-qj-qBW">
+                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пользователь" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR7-6u-R2D">
+                                        <rect key="frame" x="0.0" y="175" width="184.5" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qkQ-rB-x8h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D86-z9-gaB" firstAttribute="centerX" secondItem="G3t-iX-OHH" secondAttribute="centerX" id="mc8-KE-WWs"/>
+                            <constraint firstItem="D86-z9-gaB" firstAttribute="centerY" secondItem="G3t-iX-OHH" secondAttribute="centerY" id="xdO-FY-jeV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xnH-VV-Tub"/>
                     <connections>

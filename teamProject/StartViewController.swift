@@ -10,19 +10,19 @@ import UIKit
 class StartViewController: UIViewController, UITextFieldDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var searchTextLabel: UILabel!
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     var cityesArray = City.returnCityesArray()
-       var сitiesArraySorting = City.returnCityesArray()
+    var сitiesArraySorting = City.returnCityesArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewOutlet.dataSource = self
         tableViewOutlet.delegate = self
-        searchTextLabel.text = ""
         searchBar.delegate = self
     }
+    
+    //MARK: - функция сортировки по тексту из searchBar
     func sortedArrayOfCities(searchText: String) -> [City] {
         
         let text = searchText
@@ -38,28 +38,36 @@ class StartViewController: UIViewController, UITextFieldDelegate, UISearchBarDel
         return sortedArray
     }
     
-    
+    //MARK: -  автоматическое обновление таблице при вводе поискового запроса
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-        
         сitiesArraySorting = sortedArrayOfCities(searchText: searchText)
         tableViewOutlet.reloadData()
-        if сitiesArraySorting.count == 1 {
-            searchTextLabel.text = "Житель города: \(сitiesArraySorting[0].userName)"
-        }
-        
     }
-
+    //MARK: - кнопка "Cancel"
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.searchBar.showsCancelButton = true
     }
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
+        сitiesArraySorting = cityesArray
         tableViewOutlet.reloadData()
     }
     
+    //MARK: - скрывает клавиатуру по кнопке Done
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            searchBar.resignFirstResponder()
+        }
+    
+    //MARK: - скрывает клавиатуру по клику
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+     }
+    
+    //MARK: - navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let mainVC = segue.destination as? MainViewController else {return}
         guard let indexPath = tableViewOutlet.indexPathForSelectedRow?.row else {return}
@@ -67,9 +75,8 @@ class StartViewController: UIViewController, UITextFieldDelegate, UISearchBarDel
         mainVC.city = city
     }
 }
-
+//MARK: - tableView
 extension StartViewController : UITableViewDataSource, UITableViewDelegate {
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         сitiesArraySorting.count
@@ -84,9 +91,8 @@ extension StartViewController : UITableViewDataSource, UITableViewDelegate {
        let city = сitiesArraySorting[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = city.usersCity
+        content.secondaryText = city.userName
         cell.contentConfiguration = content
         return cell
     }
-   
- 
 }
