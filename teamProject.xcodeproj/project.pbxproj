@@ -15,6 +15,7 @@
 		CACFE03A2783517A00D80D3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACFE0382783517A00D80D3D /* LaunchScreen.storyboard */; };
 		CACFE0432783644A00D80D3D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFE0422783644A00D80D3D /* DataManager.swift */; };
 		CACFE0462783671300D80D3D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFE0452783671300D80D3D /* Model.swift */; };
+		CACFE06B278499E200D80D3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFE06A278499E100D80D3D /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CACFE03B2783517A00D80D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CACFE0422783644A00D80D3D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CACFE0452783671300D80D3D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CACFE06A278499E100D80D3D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CACFE02D2783516C00D80D3D /* AppDelegate.swift */,
 				CACFE02F2783516C00D80D3D /* SceneDelegate.swift */,
 				CACFE0312783516C00D80D3D /* StartViewController.swift */,
+				CACFE06A278499E100D80D3D /* MainViewController.swift */,
 				CACFE0422783644A00D80D3D /* DataManager.swift */,
 				CACFE0452783671300D80D3D /* Model.swift */,
 				CACFE0332783516C00D80D3D /* Main.storyboard */,
@@ -146,6 +149,7 @@
 				CACFE0462783671300D80D3D /* Model.swift in Sources */,
 				CACFE0322783516C00D80D3D /* StartViewController.swift in Sources */,
 				CACFE0432783644A00D80D3D /* DataManager.swift in Sources */,
+				CACFE06B278499E200D80D3D /* MainViewController.swift in Sources */,
 				CACFE02E2783516C00D80D3D /* AppDelegate.swift in Sources */,
 				CACFE0302783516C00D80D3D /* SceneDelegate.swift in Sources */,
 			);

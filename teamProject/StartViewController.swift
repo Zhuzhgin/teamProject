@@ -8,29 +8,27 @@
 import UIKit
 
 class StartViewController: UIViewController, UITextFieldDelegate, UISearchDisplayDelegate {
-   
-    
-
     var cityesArray = City.returnCityesArray()
     var сitiesArraySorting = City.returnCityesArray()
 
     @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var searchTextLabel: UILabel!
-    
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     //var search = UISearchController()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewOutlet.dataSource = self
         tableViewOutlet.delegate = self
         searchTextLabel.text = ""
-       
-        
     }
+    
+    
+    var text : String = ""
 
+
+   
     
     func sortedArrayOfCities() -> [City] {
         guard let text = searchTF.text else { return cityesArray }
@@ -46,24 +44,26 @@ class StartViewController: UIViewController, UITextFieldDelegate, UISearchDispla
         return sortedArray
     }
     
-
-       
-    @IBAction func searchButtonTapped(_ sender: UIButton) {
+    @IBAction func checkTFEdit(_ sender: Any) {
         сitiesArraySorting = sortedArrayOfCities()
-        searchTF.text = ""
-        
+        tableViewOutlet.reloadData()
         if сitiesArraySorting.count == 1 {
             searchTextLabel.text = "Житель города: \(сitiesArraySorting[0].userName)"
         }
-        else {
-            searchTextLabel.text = ""
-        }
-        tableViewOutlet.reloadData()
-    }
+        
+       }
+
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let mainVC = segue.destination as? MainViewController else {return}
+        guard let indexPath = tableViewOutlet.indexPathForSelectedRow?.row else {return}
+        let city = сitiesArraySorting[indexPath]
+        mainVC.city = city
+    }
 }
 
 extension StartViewController : UITableViewDataSource, UITableViewDelegate {
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         сitiesArraySorting.count
@@ -78,15 +78,9 @@ extension StartViewController : UITableViewDataSource, UITableViewDelegate {
        let city = сitiesArraySorting[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = city.usersCity
-        //  print(content.text)
         cell.contentConfiguration = content
         return cell
     }
-    
-//    extension StartViewController: UISearchResultsUpdating {
-//
-//
-//    }
-    
-    
+   
+ 
 }
