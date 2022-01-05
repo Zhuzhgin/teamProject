@@ -7,31 +7,25 @@
 
 import UIKit
 
-class StartViewController: UIViewController, UITextFieldDelegate, UISearchDisplayDelegate {
-    var cityesArray = City.returnCityesArray()
-    var сitiesArraySorting = City.returnCityesArray()
+class StartViewController: UIViewController, UITextFieldDelegate, UISearchBarDelegate {
 
-    @IBOutlet weak var searchTF: UITextField!
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTextLabel: UILabel!
     @IBOutlet weak var tableViewOutlet: UITableView!
     
-    //var search = UISearchController()
-    
+    var cityesArray = City.returnCityesArray()
+       var сitiesArraySorting = City.returnCityesArray()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewOutlet.dataSource = self
         tableViewOutlet.delegate = self
         searchTextLabel.text = ""
+        searchBar.delegate = self
     }
-    
-    
-    var text : String = ""
-
-
-   
-    
-    func sortedArrayOfCities() -> [City] {
-        guard let text = searchTF.text else { return cityesArray }
+    func sortedArrayOfCities(searchText: String) -> [City] {
+        
+        let text = searchText
         guard text != "" else {return cityesArray}
         var sortedArray: [City] = []
         for index in 0..<cityesArray.count {
@@ -44,15 +38,27 @@ class StartViewController: UIViewController, UITextFieldDelegate, UISearchDispla
         return sortedArray
     }
     
-    @IBAction func checkTFEdit(_ sender: Any) {
-        сitiesArraySorting = sortedArrayOfCities()
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        
+        сitiesArraySorting = sortedArrayOfCities(searchText: searchText)
         tableViewOutlet.reloadData()
         if сitiesArraySorting.count == 1 {
             searchTextLabel.text = "Житель города: \(сitiesArraySorting[0].userName)"
         }
         
-       }
+    }
 
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        tableViewOutlet.reloadData()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let mainVC = segue.destination as? MainViewController else {return}

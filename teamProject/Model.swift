@@ -10,7 +10,6 @@ import Foundation
 struct City {
     var usersCity: String
     var userName: String
-    var index: Int
 
 }
 extension City {
@@ -23,8 +22,7 @@ extension City {
         for index in 0..<cityes.count {
         let city = City(
             usersCity: cityes[index],
-            userName: names[index],
-            index: index)
+            userName: names[index])
             cityesArray.append(city)
         }
     return cityesArray

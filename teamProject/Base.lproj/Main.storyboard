@@ -16,20 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Город или имя пользователя" textAlignment="natural" minimumFontSize="17" background="magnifyingglass" catalog="system" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9PB-Q7-wky">
-                                <rect key="frame" x="30" y="10" width="315" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" smartDashesType="no"/>
-                                <connections>
-                                    <action selector="checkTFEdit:" destination="BYZ-38-t0r" eventType="editingChanged" id="zBM-UM-YVE"/>
-                                </connections>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FYl-ez-0Sl">
-                                <rect key="frame" x="30" y="93" width="315" height="332.5"/>
+                                <rect key="frame" x="30" y="69" width="315" height="356.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Название города или имя пользователя" id="a2S-7v-AJC">
+                                    <rect key="frame" x="0.0" y="0.0" width="315" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="2bM-e4-oIc">
-                                        <rect key="frame" x="0.0" y="28" width="315" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="72" width="315" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2bM-e4-oIc" id="M1M-Z9-Dhu">
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
@@ -52,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Города пользователей" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8N-8e-wP6">
-                                <rect key="frame" x="64.5" y="54" width="246" height="29"/>
+                                <rect key="frame" x="64.5" y="30" width="246" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -61,22 +58,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="9PB-Q7-wky" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="4cp-nC-d7G"/>
+                            <constraint firstItem="b8N-8e-wP6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="7CA-aE-7Lc"/>
                             <constraint firstItem="b8N-8e-wP6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HW7-pS-aMi"/>
-                            <constraint firstItem="b8N-8e-wP6" firstAttribute="top" secondItem="9PB-Q7-wky" secondAttribute="bottom" constant="10" id="OeG-Kv-t9D"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FYl-ez-0Sl" secondAttribute="trailing" constant="30" id="RfF-Au-fdr"/>
                             <constraint firstItem="Ltc-1S-YMX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="WCp-gl-GVr"/>
-                            <constraint firstItem="9PB-Q7-wky" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ddq-3u-jYF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ltc-1S-YMX" secondAttribute="trailing" constant="30" id="e3f-bT-iHq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ltc-1S-YMX" secondAttribute="bottom" constant="70" id="goc-Vr-jTC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9PB-Q7-wky" secondAttribute="trailing" constant="30" id="gvn-Ch-zVR"/>
                             <constraint firstItem="FYl-ez-0Sl" firstAttribute="top" secondItem="b8N-8e-wP6" secondAttribute="bottom" constant="10" id="kcP-Ra-iTZ"/>
                             <constraint firstItem="Ltc-1S-YMX" firstAttribute="top" secondItem="FYl-ez-0Sl" secondAttribute="bottom" constant="150" id="nfy-ik-xAL"/>
                             <constraint firstItem="FYl-ez-0Sl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="znt-Jk-gwR"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="searchTF" destination="9PB-Q7-wky" id="ihp-i7-Wdt"/>
+                        <outlet property="searchBar" destination="a2S-7v-AJC" id="1Ik-Io-slq"/>
                         <outlet property="searchTextLabel" destination="Ltc-1S-YMX" id="tQ7-4E-iiL"/>
                         <outlet property="tableViewOutlet" destination="FYl-ez-0Sl" id="nDH-3c-6j5"/>
                     </connections>
@@ -123,7 +117,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
